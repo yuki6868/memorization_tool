@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <!-- ビューポートの設定: スケーラブルなデザインを実現するための基本設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorization App</title>
+    <!-- 外部CSSファイルのリンク -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Memorization App</h1>
+  <!-- メモ作成フォームのコンテナ -->
+  <div class="form-container">
+    <h2 id="formTitle">やったことの登録</h2>
+    <form id="createDoForm", name="myform">
+        <div>
+            <!-- タイトル入力フィールド -->
+            <label for="title">タイトル</label>
+            <input type="text" id="title" placeholder="タイトルを入力" required />
+        </div>
+        <div>
+            <!-- 詳細入力フィールド -->
+            <label for="description">内容</label>
+            <textarea id="description" placeholder="内容を入力"></textarea>
+        </div>
+        <div>
+            <label for="start">いつ学習したか</label>
+            <input type="date" id="start" name="start" />
+        </div>
+        <br>
+        <fieldset>
+            <legend>手応えはどうか</legend>
+            <div>
+                <input type="radio" id="radio1" name="radio_num" value="理解できた"/>
+                <label for="radio1">理解できた</label>
+            
+                <input type="radio" id="radio2" name="radio_num" value="ちょっと不安"/>
+                <label for="radio2">ちょっと不安</label>
+            </div>
+        </fieldset>     
+        <div class="button-container">
+            <!-- メモ新規登録ボタン -->
+            <button type="submit" id="newButton">新規登録</button>
+            <!-- 更新ボタン（初期状態では非表示style="display: none;） -->
+            <button type="button" id="updateButton" style="display: none;">更新実行</button>
+        </div>
+    </form>
+  </div>
+  <br>
+  <a href="index.html" class="btn">戻る</a>
+  <!-- JavaScriptファイルのリンク -->
+  <script src="app.js"></script>
+</body>
+</html>
