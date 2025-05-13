@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import ValidationError
+import uvicorn
 from schemas.memo import InsertAndUpdateMemoSchema, MemoSchema, ResponseSchema
 from routers.memo import router as memo_router
 
@@ -14,7 +15,9 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     # 許可するオリジンを指定
-    allow_origins=["http://127.0.0.1:5500"],
+    # allow_origins=["http://127.0.0.1:5500"],
+    allow_origins=["*"],
+    # allow_origins=["*"],
     # 認証情報を含むリクエストを許可
     allow_credentials=True,
     # 許可するHTTPメソッドを指定
@@ -26,6 +29,8 @@ app.add_middleware(
 # ルーターのマウント
 app.include_router(memo_router)
 
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
 # バリデーションエラーのカスタムハンドラ
 @app.exception_handler(ValidationError)
 async def validation_exception_handler(exc: ValidationError):

@@ -2,7 +2,14 @@
 
 忘却曲線に基づいて，いつ復習すれば良いかを教えてくれるアプリ．
 
-## 開始手順
+## NEW!! デスクトップアプリ化(2025年 5/13)
+appディレクトリで以下のコマンドを実行し，デスクトップアプリにする．
+> $ electron-packager . memorization-tool --platform=darwin --arch=x64 --out=dist --overwrite --icon=memorization_tool.icns＿
+
+以下のディレクトリにアプリ(memorization-tool)が作成されているので，ダブルクリックで起動する．
+> /app/dist/memorization-tool-darwin-x64
+
+## 開始手順(VScode内での実行)
 以下のコマンドをターミナルで実行し，必要なパッケージをインストールする．<br>
 > $ pip install -r requirements.txt
 

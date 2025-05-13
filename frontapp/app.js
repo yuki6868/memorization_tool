@@ -230,7 +230,10 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('haro')
     const form = document.getElementById('createDoForm');
     // const form = document.myform.submit();
-
+    if (!form) {
+        console.error("Form with ID 'createDoForm' not found.");
+        return;
+    }
     // フォームの送信イベントに対する処理を設定 form.onsubmit = async (event) => {      document.getElementById('newButton').onclick = async (event) => {
     form.onsubmit = async (event) => {      
         // フォームのデフォルトの送信動作を防止 event.preventDefault();

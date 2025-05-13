@@ -15,9 +15,9 @@ async def insert_memo(db: AsyncSession, item: memo_schema.InsertAndUpdateMemoSch
 
     # 復習スケジュール：1日後、7日後、30日後
     if item.radio == "理解できた":
-        intervals = [1, 7, 30, 60]
+        intervals = [1, 3, 7, 30, 60]
     else:
-        intervals = [1, 7, 14, 30, 60]
+        intervals = [1, 3, 7, 14, 30, 60]
     for i in intervals:
         review_do = item.studied_on + timedelta(days=i)
         review = memo_model.Memo(title=item.title, description=item.description, studied_on=item.studied_on, review_day=review_do)

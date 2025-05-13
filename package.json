@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "忘却曲線に基づいて，いつ復習すれば良いかを教えてくれるアプリ．",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuki6868/memorization_tool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuki6868/memorization_tool/issues"
+  },
+  "homepage": "https://github.com/yuki6868/memorization_tool#readme",
+  "devDependencies": {
+    "electron": "^36.2.0"
+  }
+}
